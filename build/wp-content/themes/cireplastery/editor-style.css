@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Open+Sans:300,400,700,800");
+html {
+  font-size: 16px; }
+
+#tinymce {
+  font-family: 'Open Sans', sans-serif; }
+  #tinymce html {
+    font-size: 160px; }
+  #tinymce p, #tinymce td {
+    font-size: 1rem; }
+  #tinymce h1, #tinymce h2, #tinymce h3, #tinymce h4, #tinymce h5, #tinymce h6 {
+    font-family: 'Roboto Slab', serif;
+    margin: .5rem 0 1.5rem 0;
+    font-weight: normal; }
+  #tinymce h1 {
+    font-size: 2.5rem;
+    line-height: 3rem; }
+  #tinymce h2 {
+    font-size: 2rem;
+    line-height: 2.5rem; }
+  #tinymce h3 {
+    font-size: 1.75rem;
+    line-height: 2.2rem; }
+  #tinymce h4 {
+    font-size: 1.5rem;
+    line-height: 1.9rem; }
+  #tinymce h5 {
+    font-size: 1.25rem;
+    line-height: 1.8rem; }

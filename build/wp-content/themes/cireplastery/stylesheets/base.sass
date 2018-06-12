@@ -1,0 +1,101 @@
+@import '../../../../../bootstrap-vars.scss'
+@import 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Open+Sans:300,400,700,800'
+
+$font-stack: 'Open Sans', sans-serif;
+$font-stack-h: 'Roboto Slab', serif;
+
+body, html
+	font-family: $font-stack
+	font-size: 14px
+
+h1, h2, h3, h4, h5, h6
+	font-family: $font-stack-h
+
+h1
+	line-height: 3rem
+
+h2
+	line-height: 2.5rem
+
+h3
+	line-height: 2.2rem
+
+h4
+	line-height: 1.9rem
+
+h5
+	line-height: 1.8rem
+
+img
+	max-width: 100%
+	height: auto
+
+figure
+	margin: 0
+
+	img
+		width: 100%
+
+.cookie-banner
+	background-color: pink
+	font-size: .75rem
+	overflow-y: hidden
+
+	p
+		margin: 0
+
+	a
+		display: block
+
+.alignnone,
+.aligncenter,
+.alignright,
+.alignleft 
+	margin: 0 0 1rem 0
+
+	&[class*=wp-image]
+		width: 100%
+
+.video-container
+	position: relative
+	padding-bottom: 56%
+	margin: 2rem 0
+	height: 0
+	overflow: hidden
+
+	iframe
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+
+nav
+	ul
+		display: block
+		position: relative
+		margin: 0
+		padding: 0
+		list-style: none
+
+		li
+			display: inline-block
+
+			a
+				text-decoration: none !important
+				font-family: $font-stack-h
+				color: #333
+				display: block
+				background-color: #f4f4f4
+
+				&:hover
+					background-color: #333
+					color: #fff
+
+			&[class*="current"]
+				a
+					background-color: pink
+
+footer
+	background-color: #333
+	color: #f4f4f4
