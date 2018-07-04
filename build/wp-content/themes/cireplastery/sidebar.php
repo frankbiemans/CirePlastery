@@ -1,1 +1,0 @@
-<?php dynamic_sidebar('Main Sidebar'); // sidebar ?>

@@ -24,17 +24,7 @@
 <body <?php body_class(); ?>>
 
     <?php include('cookie-banner.php'); ?>
-    
+
     <header>
-    <?php
-        include('header-menu.php');
-        if(!is_contact_page()){
-            include('header-slider.php');
-        } else if(is_contact_page()){
-            include_once( 'google-maps.php');
-        }
-    ?>
+    <?php include('header-menu.php'); ?>
     </header>
-    <main class="my-3">
-        <div class="container">
-            <div class="row">

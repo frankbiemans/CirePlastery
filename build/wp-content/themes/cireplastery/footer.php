@@ -1,16 +1,8 @@
 
-		<aside class="col-sm-4">
-			<?php get_sidebar(); ?>
-		</aside>
-
-		</div><!-- / .row -->
-	</div><!-- / .container-fluid -->
-</main><!-- / main -->
-
-<footer class="py-3">
+<footer>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-12">
 				<?php dynamic_sidebar('Footer'); // sidebar ?>
 			</div>
 		</div>

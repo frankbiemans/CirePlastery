@@ -3,7 +3,7 @@
         <div class="col-xs-12 col-sm-4 col-md-2 flex-xs-middle">
             <figure class="logo">
                 <a href="<?php echo site_url(); ?>">
-                    <img src="<?php bloginfo( 'template_url' ) ?>/images/nosuch-yellow.svg" alt="<?php bloginfo( 'name' ); ?>" />
+                    #LOGO#
                 </a>
             </figure>
         </div>

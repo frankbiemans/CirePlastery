@@ -9,11 +9,6 @@ function register_required_plugins() {
 
     $plugins = array(
         array(
-			'name' => 'Google XML Sitemaps',
-			'slug' => 'google-sitemap-generator',
-			'required' => true
-		), 
-        array(
 			'name' => 'Enable Media Replace',
 			'slug' => 'enable-media-replace',
 			'required' => true
@@ -38,11 +33,6 @@ function register_required_plugins() {
 			'slug' => 'crop-thumbnails',
 			'required' => true
 		),
-        array(
-            'name' => 'WP Updates Notifier',
-            'slug' => 'wp-updates-notifier',
-            'required' => true
-        ),
         array(
             'name' => 'Activity Log',
             'slug' => 'aryo-activity-log',

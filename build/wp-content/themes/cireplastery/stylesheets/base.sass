@@ -1,30 +1,40 @@
 @import '../../../../../bootstrap-vars.scss'
-@import 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Open+Sans:300,400,700,800'
+@import 'https://fonts.googleapis.com/css?family=Poppins:300,400,600,700'
 
-$font-stack: 'Open Sans', sans-serif;
-$font-stack-h: 'Roboto Slab', serif;
+$font-stack: 'Poppins', sans-serif;
+
+$darkblue: #293939
+$yellow: #ffff00
+
+.yellow
+	color: $yellow
+
+.darkblue
+	color: $darkblue
 
 body, html
 	font-family: $font-stack
-	font-size: 14px
+	font-size: 16px
 
 h1, h2, h3, h4, h5, h6
-	font-family: $font-stack-h
+	font-family: $font-stack
+	font-weight: 700
 
 h1
-	line-height: 3rem
+	font-size: 4.875rem
+	line-height: 1
 
 h2
-	line-height: 2.5rem
+	font-size: 2rem
+	line-height: 1
 
 h3
-	line-height: 2.2rem
+	font-size: 1.875rem
+	line-height: 1
 
-h4
-	line-height: 1.9rem
-
-h5
-	line-height: 1.8rem
+p
+	font-size: 1rem
+	line-height: 1.5
 
 img
 	max-width: 100%
@@ -70,6 +80,26 @@ figure
 		width: 100%
 		height: 100%
 
+.btn
+	text-transform: uppercase
+	font-family: $font-stack
+	font-size: 1rem
+	line-height: 1
+	margin: 0
+	padding: 0
+
+.indicator-90deg
+	font-family: $font-stack
+	font-size: 1.5rem
+	font-weight: 400
+	line-height: 1
+
+small, .small
+	font-weight: 600
+	font-family: $font-stack
+	font-size: 0.75rem
+	line-height: 1.5
+
 nav
 	ul
 		display: block
@@ -83,7 +113,8 @@ nav
 
 			a
 				text-decoration: none !important
-				font-family: $font-stack-h
+				font-family: $font-stack
+				font-weight: 600
 				color: #333
 				display: block
 				background-color: #f4f4f4
@@ -97,5 +128,5 @@ nav
 					background-color: pink
 
 footer
-	background-color: #333
-	color: #f4f4f4
+	background-color: $darkblue
+	min-height: 5vh
