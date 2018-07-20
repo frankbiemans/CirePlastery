@@ -1,0 +1,50 @@
+
+.cp-btn
+	text-transform: uppercase
+	position: relative
+	display: inline-block
+	font-weight: bold
+	padding-left: 2.25rem
+	line-height: 1.5
+	color: #000
+	height: 1.5rem
+
+	&:before
+		display: block
+		position: absolute
+		height: 1.5rem
+		width: 1.5rem
+		border-radius: 50%
+		background-color: $yellow
+		background-image: url(images/arrow-right.png)
+		background-repeat: no-repeat
+		background-position: center
+		background-size: 80% 80%
+		top: 0
+		left: 0
+		content: ''
+
+	&:after
+		transition: right .25s ease-in-out
+		display: block
+		position: absolute
+		bottom: 2px
+		left: 2.25rem
+		height: 2px
+		background-color: #000
+		right: 100%
+		content: ''
+
+	&:hover
+		text-decoration: none
+
+		&:after
+			right: 0
+
+.header p:last-of-type a:last-of-type
+	@extend .cp-btn
+	margin-top: 2rem
+
+
+.widget p:last-of-type a:last-of-type
+	@extend .cp-btn

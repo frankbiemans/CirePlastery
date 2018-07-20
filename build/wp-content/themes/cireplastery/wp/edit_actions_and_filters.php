@@ -47,6 +47,7 @@ function my_admin_menu() {
      remove_menu_page( 'link-manager.php' );
      remove_menu_page( 'edit-comments.php' );
      remove_menu_page( 'tools.php' );
+     remove_menu_page('edit.php');
 }
 
 add_filter('widget_text', 'do_shortcode');

@@ -1,16 +1,53 @@
 @import '../../../../../bootstrap-vars.scss'
-@import 'https://fonts.googleapis.com/css?family=Poppins:300,400,600,700'
 
-$font-stack: 'Poppins', sans-serif;
+@import 'assets/vars'
+@import 'assets/transitions'
+@import 'assets/spinner'
+@import 'assets/forms'
+@import 'assets/social'
+@import 'assets/buttons'
+@import 'assets/sliders'
+@import 'assets/keyframes'
+@import 'assets/widgets'
 
-$darkblue: #293939
-$yellow: #ffff00
+body
+	overflow: hidden
+	user-select: none
+
+#master-wrapper
+	overflow: hidden
+
+.master-wrapper__inner
+	display: block
+	position: relative
+	margin-top: 6rem
+	cursor: grab
+
+.container-fluid
+	max-width: 1960px
 
 .yellow
 	color: $yellow
 
 .darkblue
 	color: $darkblue
+
+.white
+	color: white
+
+// .loading-screen
+// 	display: block
+// 	position: fixed
+// 	top: 0
+// 	left: 0
+// 	right: 0
+// 	bottom: 0
+// 	background-color: $darkblue
+// 	z-index: 9000
+
+.z-index
+	position: relative
+	z-index: 1
 
 body, html
 	font-family: $font-stack
@@ -19,14 +56,16 @@ body, html
 h1, h2, h3, h4, h5, h6
 	font-family: $font-stack
 	font-weight: 700
+	color: $darkblue
 
 h1
 	font-size: 4.875rem
 	line-height: 1
 
 h2
-	font-size: 2rem
-	line-height: 1
+	font-size: 3rem
+	line-height: 1.2
+	margin-bottom: 1.25rem
 
 h3
 	font-size: 1.875rem
@@ -35,6 +74,9 @@ h3
 p
 	font-size: 1rem
 	line-height: 1.5
+
+	&:last-of-type
+		margin-bottom: 0
 
 img
 	max-width: 100%
@@ -45,6 +87,45 @@ figure
 
 	img
 		width: 100%
+
+.icon
+	position: absolute
+	height: 4rem
+	width: 4rem
+	top: 3rem
+	left: 0rem
+	background: pink
+
+.icon--mouse-wheel
+	background: url(images/496854-200.png) top left
+	background-repeat: no-repeat
+	background-size: contain
+	animation-name: icon--mousewheel
+	animation-duration: 2s
+	animation-iteration-count: infinite
+	z-index: 10
+
+.title-addon
+	color: $darkblue
+	display: block
+	position: relative
+	text-transform: uppercase
+	font-family: $font-stack
+	font-weight: 300
+	font-size: 1.5rem
+
+.title-addon--03
+	text-transform: none
+
+.section--top-slider
+	position: relative
+
+.section__inner
+	padding-top: 2rem
+	padding-bottom: 2rem
+
+	+ .section__inner
+		padding-top: 0 !important
 
 .cookie-banner
 	background-color: pink
@@ -83,6 +164,7 @@ figure
 .btn
 	text-transform: uppercase
 	font-family: $font-stack
+	font-weight: 700
 	font-size: 1rem
 	line-height: 1
 	margin: 0
@@ -100,7 +182,14 @@ small, .small
 	font-size: 0.75rem
 	line-height: 1.5
 
-nav
+.nav-holder
+	top: 0
+	left: 0
+	right: 0
+	position: fixed
+	z-index: 8000
+	padding: 1rem 0
+
 	ul
 		display: block
 		position: relative
@@ -114,10 +203,16 @@ nav
 			a
 				text-decoration: none !important
 				font-family: $font-stack
-				font-weight: 600
+				font-weight: 700
+				float: right
+				margin-left: .65rem
 				color: #333
 				display: block
-				background-color: #f4f4f4
+				background-color: $yellow
+				border-radius: 1rem
+				text-transform: uppercase
+				padding: .3rem .7rem
+				transition: color .15s ease-in-out, background-color .15s ease-in-out
 
 				&:hover
 					background-color: #333
@@ -125,8 +220,37 @@ nav
 
 			&[class*="current"]
 				a
-					background-color: pink
+					background-color: #333
+					color: #fff
 
-footer
+.scale-in
+	position: relative
+	transition: transform .25s ease-in-out, opacity .25s ease-in-out
+	transform: scale(.95)
+	transform-origin: 50% 50%
+	opacity: 0
+
+.scale-in--scaled
+	transform: scale(1)
+	opacity: 1
+
+.section--projects-slider
 	background-color: $darkblue
-	min-height: 5vh
+	color: #fff
+
+.footer
+	position: relative
+	background-color: black
+	color: #ffffff
+
+.footer__contact-info
+	a
+		text-decoration: none
+		color: white
+
+		&:hover
+			color: $yellow
+			text-decoration: none
+
+.footer__title
+	font-size: 3rem

@@ -42,6 +42,11 @@ function register_required_plugins() {
             'name' => 'All In One WP Security & Firewall',
             'slug' => 'all-in-one-wp-security-and-firewall',
             'required' => true
+        ),
+        array(
+            'name' => 'Contact Form 7',
+            'slug' => 'contact-form-7',
+            'required' => true
         )
     );
 

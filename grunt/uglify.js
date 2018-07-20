@@ -5,7 +5,11 @@ module.exports = {
             'bower_components/jquery/dist/jquery.js',
             'bower_components/tether/dist/js/tether.js',
             'node_modules/bootstrap/dist/js/bootstrap.js',
-            'bower_components/modernizr/modernizr.js'
+            'bower_components/modernizr/modernizr.js',
+            'bower_components/slick-carousel/slick/slick.js',
+            'bower_components/waypoints/lib/jquery.waypoints.js',
+            'bower_components/jquery.nicescroll/dist/jquery.nicescroll.js',
+            'bower_components/jQuery-One-Page-Nav/jquery.nav.js'
             ]
         }
     },

@@ -6,6 +6,9 @@
 	body, html
 		font-size: 15px
 
+	.master-wrapper__inner
+		margin-top: 10rem
+
 	.alignnone 
 	    margin: 1.5rem 0
 
@@ -57,14 +60,77 @@
 		    margin: 0
 		    padding: 0 .5rem .5rem
 
+	.section__inner
+		padding-top: 3rem
+		padding-bottom: 3rem
+
 @media(min-width:map-get($grid-breakpoints, lg))
 	body, html
 		font-size: 16px
 
+	h2
+		margin-bottom: 2.75rem
+
+	.title-addon
+		position: absolute
+		height: auto
+		width: auto
+
+		span
+			position: relative
+			display: block
+			left: -100%
+			transform-origin: right bottom
+			transform: rotate(-90deg)
+
+	.title-addon--01
+		left: -8rem
+
+		span
+			top: -17px
+
+	.title-addon--02
+		left: -.5rem
+
+		span
+			top: -17px
+
+	.title-addon--03
+		left: -.5rem
+
+		span
+			top: -20px
+
+	.section__inner
+		padding-top: 4rem
+		padding-bottom: 4rem
+
+	.logo img
+		width: 8rem
+
+	.header h1
+		bottom: -.5rem
+
+	.section--about-us
+		position: relative
+		top: -6rem
+
+		.section__inner
+			padding-top: 0
+			padding-bottom: 0
+
 @media(min-width:map-get($grid-breakpoints, xl))
-	body, html
-		font-size: 17px
+	.section--about-us
+		top: -8rem
+
+	.title-addon--02
+		left: -2.5rem
+
+	.title-addon--03
+		left: -2.5rem
+
+	.section__inner
+		padding-top: 5rem
+		padding-bottom: 5rem
 
 @media(min-width:map-get($grid-breakpoints, xxl))
-	body, html
-		font-size: 18px

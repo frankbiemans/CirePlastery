@@ -1,5 +1,62 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Open+Sans:300,400,700,800')
 
+$yellow: #f1c400
+
+#adminmenu 
+	.toplevel_page_nsc-plugin
+		.wp-first-item
+			font-weight: bold
+
+		div.wp-menu-image
+			&:before
+				background-image: url(images/favicon.png)
+				background-repeat: no-repeat
+				background-position: center
+				background-size: contain
+				content: ''
+
+[class*="nsc"]
+	background: black
+	color: white
+
+	h1, h2, h3, h4, h5, h5, li, p, label, th
+		color: white
+
+	a
+		color: $yellow
+
+	p.description
+		opacity: .75
+
+	textarea, [type=text], select
+		display: block
+		padding: .5rem 1rem
+		min-width: 300px
+		height: auto
+
+	.wrap
+		> h2:first-of-type
+			font-weight: 700
+			text-transform: uppercase
+			color: $yellow
+
+	form
+		h2:first-of-type
+			border-top: 1px solid rgba(256, 256, 256, .25)
+			padding-top: 1rem
+
+		.form-table
+			border-bottom: 1px solid rgba(256, 256, 256, .25)
+
+		tbody
+			tr
+				th
+					padding-left: 1rem
+
+			tr:nth-child(odd)
+				background-color: rgba(256, 256, 256, .05)
+
+
 html
 	font-size: 16px
 

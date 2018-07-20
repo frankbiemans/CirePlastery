@@ -1,6 +1,6 @@
 <?php
 
-//require_once( dirname( __FILE__ ) . '/class-widget-example.php' );
+require_once( dirname( __FILE__ ) . '/text-widget-multiline-title.php' );
 
 add_action( 'widgets_init', 'unregister_widgets' );
 function unregister_widgets() {
@@ -10,7 +10,7 @@ function unregister_widgets() {
 	unregister_widget( 'WP_Widget_Links' );
 	unregister_widget( 'WP_Widget_Meta' );
 	unregister_widget( 'WP_Widget_Search' );
-	unregister_widget( 'WP_Widget_Text' );
+	//unregister_widget( 'WP_Widget_Text' );
 	unregister_widget( 'WP_Widget_Categories' );
 	unregister_widget( 'WP_Widget_Recent_Posts' );
 	unregister_widget( 'WP_Widget_Recent_Comments' );

@@ -20,11 +20,42 @@
     wp_head();
     include_once('analyticstracking.php');
     ?>
+    <style>
+        .loading-screen {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #293939;
+            z-index: 9000;
+        }
+    </style>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> style="background-color: #293939;">
+    <?php //include('cookie-banner.php'); ?>
+    <div id="master-wrapper" style="opacity: 0;">
 
-    <?php include('cookie-banner.php'); ?>
+        <div class="master-wrapper__inner">
+        <nav class="nav-holder d-none d-md-block">
+            <?php include('nav-menu.php'); ?>
+        </nav>
 
-    <header>
-    <?php include('header-menu.php'); ?>
-    </header>
+        <?php if(is_front_page()){ ?>
+            <header class="header">
+                <div class="header__inner">
+                    <div class="container">
+                        <div class="row align-items-end">
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-5 offset-lg-2">
+                                <div class="title-addon title-addon--01 wp-fade-only-in"><span>Home</span></div>
+                                <h1 class="text-transition"><?php the_title(); ?></h1>
+                            </div>
+                            <div class="col col-xl-4 offset-xl-1">
+                                <?= wpautop(apply_filters('the_content', get_post_field('post_content', 2))); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        <?php } ?>

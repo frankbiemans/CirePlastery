@@ -5,15 +5,38 @@
 add_action( 'widgets_init', 'register_theme_sidebars' );
 function register_theme_sidebars() {
     register_sidebar(array(
-        'name' => __('Main Sidebar'), 
-        'id' => 'mainsidebar', 
-        'description' => __( 'Main Sidebar' ), 
-        'class' => 'sidebar-widget', 
+        'name' => __('Post Slider Widget'), 
+        'id' => 'postprojectswidget', 
+        'description' => __( 'The title and text just after the first slider on the frontpage.' ), 
+        'class' => 'widget', 
         'before_widget' => '<div id="%1$s" class="widget %2$s">', 
         'after_widget' => '</div>', 
-        'before_title' => '<h3>', 
+        'before_title' => '<h2 class="text-transition">', 
+        'after_title' => '</h2>'
+    ));
+
+    register_sidebar(array(
+        'name' => __('Veel Toepassingen'), 
+        'id' => 'applications', 
+        'description' => __( 'The items onder de kop "Veel toepassingen" op de voorpagina' ), 
+        'class' => 'widget', 
+        'before_widget' => '<div class="col-12 col-md-6 col-lg-3"><div class="fontpage-widget widget--transition-to-top"><div id="%1$s" class="widget %2$s">', 
+        'after_widget' => '</div></div></div>', 
+        'before_title' => '<h3 class="d-none">', 
         'after_title' => '</h3>'
     ));
+
+    register_sidebar(array(
+        'name' => __('Beton eigenschappen'), 
+        'id' => 'concrete', 
+        'description' => __( 'The items onder de kop "Beton eigenschappen" op de voorpagina' ), 
+        'class' => 'widget', 
+        'before_widget' => '<div class="col-12 col-md-6 col-lg-3"><div class="fontpage-widget widget--transition-to-top"><div id="%1$s" class="widget %2$s">', 
+        'after_widget' => '</div></div></div>', 
+        'before_title' => '<h3 class="d-none">', 
+        'after_title' => '</h3>'
+    ));
+
 
     register_sidebar(array(
         'name' => __('Footer'), 
