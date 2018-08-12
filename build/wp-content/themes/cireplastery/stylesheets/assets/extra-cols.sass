@@ -1,0 +1,8 @@
+@media(min-width:map-get($grid-breakpoints, xl))
+    .row--seven-cols-xl
+        $columns-count: 7
+        @for $i from 1 through $columns-count
+            .col-xl-#{$i}
+                $width: 100%/$columns-count*$i
+                flex: 0 0 $width
+                max-width: $width

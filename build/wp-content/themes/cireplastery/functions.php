@@ -8,7 +8,7 @@ update_option( 'WP_SITEURL', 'http://'. $_SERVER['HTTP_HOST'] );
 
 add_image_size( 'Frontpage Slider', 2240, 1100, true );
 
-add_theme_support( 'post-thumbnails', array( 'post', 'slider-item' ) );
+add_theme_support( 'post-thumbnails', array( 'post', 'slider-item', 'project' ) );
 
 function return_all_countries() {
     return $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegowina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia (Hrvatska)", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "France Metropolitan", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard and Mc Donald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao, People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia, The Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia (Slovak Republic)", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "St. Helena", "St. Pierre and Miquelon", "Sudan", "Suriname", "Svalbard and Jan Mayen Islands", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe");
@@ -60,25 +60,27 @@ function ag_get_theme_menu( $theme_location ) {
 
 add_action( 'after_setup_theme', 'add_page_options' );
 function add_page_options(){
-    $post_meta = new Super_Custom_Post_Meta('page');
+    if( class_exists( 'Super_Custom_Post_Type' ) ){
+        $post_meta = new Super_Custom_Post_Meta('page');
 
-    $fields = [
-        'title_multiple_lines' => [ 
-            'type' => 'textarea', 
-            'label' => 'Title over multiple lines',
-            'field_description' => 'hoi',
-            'default' => ''
-        ]
-    ];
+        $fields = [
+            'title_multiple_lines' => [ 
+                'type' => 'textarea', 
+                'label' => 'Title over multiple lines',
+                'field_description' => 'hoi',
+                'default' => ''
+            ]
+        ];
 
-    $post_meta->add_meta_box(
-        array(
-            'id' => 'page_extra_options',
-            'title' => 'Extra opties voor paginas',
-            'context' => 'normal',
-            'fields' => $fields
-        )
-    );
+        $post_meta->add_meta_box(
+            array(
+                'id' => 'page_extra_options',
+                'title' => 'Extra opties voor paginas',
+                'context' => 'normal',
+                'fields' => $fields
+            )
+        );
+    }
 }
 
 function break_off_the_title( $title, $id = null ) {
@@ -101,3 +103,49 @@ function put_title_in_spans($title_multiple_lines){
         return $title;
 }
 add_filter( 'the_title', 'break_off_the_title', 10, 2 );
+
+
+
+function return_instagram_feed($hastag = false){
+    $access_token = '20246152.3a81a9f.0bf6bbb25e0544dba0ed7945127e1fe2';
+    //$access_token = '183182063.bfff618.694a64013cb94965b2ef76ffa1a54484';
+    //$user = '183182063'; // rik vera
+    $user = 'self';
+    $feed_url = 'https://api.instagram.com/v1/users/'. $user .'/media/recent/?access_token='. $access_token;
+    $json = file_get_contents($feed_url);
+    $obj = json_decode($json);
+    $return_arr = [];
+
+    foreach($obj->data as $post){
+        if(isset($hastag) && $hastag != false){
+            if(!in_array($hastag, $post->tags)){
+                continue;
+            }
+        }
+
+        $title = preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', $post->caption->text);
+        $text = str_replace($title, '', $post->caption->text);
+
+        $add_me = [
+            'ID' => $post->id,
+            'title' => $title,
+            'text' => $text,
+            'location' => $post->location->name,
+            'likes' => $post->likes->count,
+            'image' => [
+                'src' => $post->images->standard_resolution->url, 
+                'width' => $post->images->standard_resolution->width, 
+                'height' => $post->images->standard_resolution->height, 
+                'alt' => $post->caption->text
+            ],
+            'timestamp' => $post->created_time,
+            'link' => $post->link,
+            'target' => '_blank',
+            'type' => 'instagram'
+        ];
+
+        $return_arr[] = $add_me;
+    }
+
+    return $return_arr;
+}

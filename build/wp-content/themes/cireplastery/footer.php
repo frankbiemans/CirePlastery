@@ -1,7 +1,7 @@
 		<footer id="contact" class="footer">
 			<div class="section__inner">
 				<div class="container">
-					<div class="row align-items-end mb-3">
+					<div class="row align-items-end footer_row--first">
 						<div class="col-12 col-md-9">
 							<h3 class="white text-transition footer__title">
 								<div class="title-addon title-addon--03 wp-fade-only-in"><span class="white">Contact</span></div>
@@ -14,10 +14,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="row align-items-end mt-3">
+					<div class="row footer_row--second">
 						<div class="col-12 col-md-4 col-lg-3">
 							<figure class="mb-3"> 
-								<?= wp_get_attachment_image( 32, 'full'); ?>
+								<?= wp_get_attachment_image( 15, 'full'); ?>
 							</figure>
 							<div class="footer__contact-info">
 								<?= wpautop(get_option('footer_contact')); ?>

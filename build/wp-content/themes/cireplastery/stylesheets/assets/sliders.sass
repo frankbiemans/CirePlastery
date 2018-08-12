@@ -27,7 +27,19 @@
 		border-radius: 3.5px
 		background-color: $yellow
 
+.project-sliders
+	overflow: visible
 
+	.slick-list
+		overflow: visible
+		margin: -1rem
+
+	.slick-slide
+		margin: 0 1rem
+
+@media(min-width:map-get($grid-breakpoints, md))
+	.project-sliders
+		width: 85vw
 
 @media(min-width:map-get($grid-breakpoints, lg))
 	.slide__content-holder

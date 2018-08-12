@@ -1,0 +1,35 @@
+
+@mixin yellow-button($float)
+	position: relative
+	transition: background-color .15s ease-in-out, color .15s ease-in-out, border-color .15s ease-in-out
+	display: block
+	cursor: pointer
+	width: 11rem
+	background-color: $yellow
+	text-align: left
+	padding: .35rem 0 .25rem 1.35rem
+	font-weight: 600
+	color: black
+	border-radius: 2rem
+	float: $float
+	margin-top: 2rem
+	font-size: 1rem
+
+	&:hover
+		background-color: $darkblue
+		border-color: $darkblue
+		color: white
+		text-decoration: none
+
+	&:after
+		transition: color .15s ease-in-out
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		font-size: 2.25rem
+		font-family: 'Font Awesome 5 Pro'
+		content: "\f105"
+		line-height: 1
+		padding-right: .65rem

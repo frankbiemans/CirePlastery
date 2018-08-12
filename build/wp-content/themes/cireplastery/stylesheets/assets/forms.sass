@@ -1,5 +1,7 @@
 
 form
+	margin-top: 2rem
+
 	::placeholder
 		color: $yellow !important
 		opacity: 1 !important
@@ -12,7 +14,7 @@ form
 		color: $yellow !important
 		opacity: 1 !important
 
-	label, input, textarea
+	label, input, textarea, .fake-submit
 		display: block
 		position: relative
 		padding: 0
@@ -21,15 +23,77 @@ form
 		max-width: 100%
 		outline: 0
 		font-family: $font-stack
-		font-size: 1rem
+		font-size: 0.75rem
 		color: $yellow
 		border: 0
 		background-color: transparent
+		font-weight: 300
 
 	[type=text],
 	[type=tel],
-	[type=email]
+	[type=email],
 		text-transform: uppercase
+		user-select: text
 		border-bottom: 2px solid $yellow
 		padding: .5rem 0
-		margin: .75rem 0
+		margin: 2rem 0 0 0
+
+	textarea
+		height: 150px
+		font-size: 12px
+		line-height: 50px
+		user-select: text
+		background: url(images/textarea-bg.gif) top left local
+		padding-right: 1rem
+		padding-top: .7rem
+		margin: 2rem 0 0 0
+		text-transform: uppercase
+
+	[type=submit],
+	.fake-submit
+		@include yellow-button(right)
+
+
+.form__submit-wrapper
+	height: 4rem
+
+.screen-reader-response,
+.wpcf7-validation-errors
+	margin-top: 1rem
+	font-size: .75rem
+	color: $orange
+	border: 1px solid rgba(256, 256, 256, .25)
+	padding: .5rem
+
+	ul:last-of-type
+		margin-bottom: 0
+
+.screen-reader-response
+	display: none
+
+.wpcf7-not-valid-tip
+	position: absolute
+	padding-top: .25rem
+	font-size: .75rem
+	color: $orange
+
+
+@media(min-width:map-get($grid-breakpoints, lg))
+	form
+		margin-top: 1rem
+
+		textarea
+			padding-right: 2rem
+
+		[type=text],
+		[type=tel],
+		[type=email]
+			margin: 3.75rem 0 0 0
+
+		[type=submit]
+			width: 10rem
+			background-color: $yellow
+			color: black
+			border-radius: 1rem 0 0 0 0
+			float: right
+			margin: 3.75rem 0 0 0

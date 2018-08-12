@@ -2,11 +2,12 @@
 
 	get_header();
 
-	include('front-page--top-slider.php');
-	include('front-page--many-applications.php');
-	include('front-page--projects-slider.php');
-	include('front-page--concrete-applications.php');
-	include('front-page--about-us.php');
+	get_template_part('partials/front-page--top-slider');
+	get_template_part('partials/front-page--many-applications');
+	get_template_part('partials/front-page--projects-slider');
+	get_template_part('partials/front-page--concrete-applications');
+	get_template_part('partials/front-page--about-us');
+	get_template_part('partials/front-page--instagram');
 
 	get_footer();
 

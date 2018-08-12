@@ -9,7 +9,10 @@ include_once( dirname( __FILE__ ) . '/sidebars.php' );
 include_once( dirname( __FILE__ ) . '/dashboard_widgets.php' );
 //include_once( dirname( __FILE__ ) . '/branding.php' );
 
-include_once(dirname(__FILE__) . '/post-types/_require.php' );
+if( class_exists( 'Super_Custom_Post_Type' ) ){
+	include_once(dirname(__FILE__) . '/post-types/_require.php' );
+}
+
 include_once(dirname(__FILE__) . '/shortcodes/_require.php' );
 include_once(dirname(__FILE__) . '/widgets/_require.php' );
 include_once(dirname(__FILE__) . '/plugins/_require.php' );

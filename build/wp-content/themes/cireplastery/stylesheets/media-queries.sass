@@ -64,12 +64,75 @@
 		padding-top: 3rem
 		padding-bottom: 3rem
 
+	.section--about-us
+		margin-top: -8rem
+
+	.footer_row--first
+		margin-bottom: 3rem
+
+	.section--instagram-feed
+		.row--first,
+		.row--second
+			.col
+				&:nth-child(5)
+					display: block
+
 @media(min-width:map-get($grid-breakpoints, lg))
 	body, html
 		font-size: 16px
 
 	h2
 		margin-bottom: 2.75rem
+
+	.section__inner
+		padding-top: 4rem
+		padding-bottom: 4rem
+
+	.logo
+		img
+			transition: width .25s ease-in-out 
+			width: 8rem
+
+	.nav-holder--scrolled
+		.logo
+			img
+				width: 3rem
+
+	.header h1
+		bottom: -.5rem
+
+	.section--about-us
+		position: relative
+		margin-top: -6rem
+
+		.section__inner
+			padding-top: 0
+			padding-bottom: 0
+
+	.footer_row--first
+		margin-bottom: 4rem
+
+	.footer__contact-info
+		margin-top: 2rem
+
+	.section--instagram-feed
+		.row--first,
+		.row--second
+			.col
+				&:nth-child(6),
+				&:nth-child(7)
+					display: block
+
+	.instagram-post
+		figure
+			transition: transform .15s ease-in-out
+
+			&:hover
+				transform: scale(1.05)
+
+@media(min-width:map-get($grid-breakpoints, xl))
+	.section--about-us
+		margin-top: -8rem
 
 	.title-addon
 		position: absolute
@@ -83,48 +146,22 @@
 			transform-origin: right bottom
 			transform: rotate(-90deg)
 
+	.row--project-slider
+		margin-top: 3rem
+
 	.title-addon--01
-		left: -8rem
+		left: -10rem
 
 		span
 			top: -17px
-
-	.title-addon--02
-		left: -.5rem
-
-		span
-			top: -17px
-
-	.title-addon--03
-		left: -.5rem
-
-		span
-			top: -20px
-
-	.section__inner
-		padding-top: 4rem
-		padding-bottom: 4rem
-
-	.logo img
-		width: 8rem
-
-	.header h1
-		bottom: -.5rem
-
-	.section--about-us
-		position: relative
-		top: -6rem
-
-		.section__inner
-			padding-top: 0
-			padding-bottom: 0
-
-@media(min-width:map-get($grid-breakpoints, xl))
-	.section--about-us
-		top: -8rem
 
 	.title-addon--02
 		left: -2.5rem
+		top: -1rem
+
+	.title-addon--04
+		left: -10rem
+		top: -1.25rem
 
 	.title-addon--03
 		left: -2.5rem
@@ -132,5 +169,18 @@
 	.section__inner
 		padding-top: 5rem
 		padding-bottom: 5rem
+
+	.footer_row--first
+		margin-bottom: 5rem
+
+	.insta-header
+		position: absolute
+		top: -6rem
+		width: 20rem
+
+	.custom-size-increase--01
+		.widget
+			width: 200%
+
 
 @media(min-width:map-get($grid-breakpoints, xxl))

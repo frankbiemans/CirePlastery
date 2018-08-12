@@ -21,25 +21,6 @@
 .slider-widget__inner
 	padding: 0rem 0rem 2rem 0rem
 
-.widget--transition-to-top
-	position: relative
-	transition: top .25s ease-in-out, opacity .25s ease-in-out
-	top: 5rem
-	opacity: 0
-
-.widget--transition-to-top--02
-	transition-delay: .1s
-
-.widget--transition-to-top--03
-	transition-delay: .2s
-
-.widget--transition-to-top--04
-	transition-delay: .3s
-
-.widget--transition-to-top--transitioned
-	opacity: 1
-	top: 0rem
-
 .fontpage-widget
 	margin-bottom: 2rem
 
@@ -53,6 +34,10 @@
 		margin: 0 0 1rem 0!important
 		float: none !important
 		display: block
+
+.fontpage-widget--project
+	img
+		max-width: 100%
 
 @media(min-width:map-get($grid-breakpoints, md))
 	.slider-widget__inner
@@ -72,9 +57,31 @@
 			max-width: 50%
 			margin: 0 0 2.25rem 0 !important
 
+	.fontpage-widget--project
+		img
+			max-width: 100%
+			margin: 0 0 1.25rem 0 !important
+
 @media(min-width:map-get($grid-breakpoints, lg))
 	.fontpage-widget
 		margin-bottom: 0rem
 
 	.slider-widget__inner
 		padding: 2rem 0rem 2rem 0rem
+
+@media(min-width:map-get($grid-breakpoints, xl))
+	.widget--transition-to-top
+		position: relative
+		transition: top .25s ease-in-out, opacity .25s ease-in-out
+		top: 5rem
+		opacity: 0
+
+	@for $i from 1 through 30
+		.widget--transition-to-top--#{$i}
+			$delay: (.1s*$i)
+			transition-delay: $delay
+
+	.widget--transition-to-top--transitioned
+		opacity: 1
+		top: 0rem
+		

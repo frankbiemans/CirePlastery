@@ -5,7 +5,15 @@
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <meta http-equiv='x-ua-compatible' content='ie=edge'>
     <title><?php wp_title( ' - ', 1, 'right' ); bloginfo( 'name' ); ?></title>
+
     <link rel='shortcut icon' href='<?php bloginfo( 'template_url' ) ?>/images/favi.ico'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo( 'template_url' ) ?>/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo( 'template_url' ) ?>/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo( 'template_url' ) ?>/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="<?php bloginfo( 'template_url' ) ?>/images/icons/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     
     <meta property="og:site_name" content="<?php wp_title(); ?>" />
     <meta property="og:title" content="<?php wp_title( ' - ', 1, 'right' ); bloginfo( 'name' ); ?>" />

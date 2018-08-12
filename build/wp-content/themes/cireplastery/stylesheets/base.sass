@@ -1,6 +1,7 @@
 @import '../../../../../bootstrap-vars.scss'
 
 @import 'assets/vars'
+@import 'assets/mixins'
 @import 'assets/transitions'
 @import 'assets/spinner'
 @import 'assets/forms'
@@ -9,6 +10,7 @@
 @import 'assets/sliders'
 @import 'assets/keyframes'
 @import 'assets/widgets'
+@import 'assets/extra-cols'
 
 body
 	overflow: hidden
@@ -29,21 +31,20 @@ body
 .yellow
 	color: $yellow
 
+	&:hover, a
+		color: $yellow
+
 .darkblue
 	color: $darkblue
+
+	&:hover, a
+		color: $darkblue
 
 .white
 	color: white
 
-// .loading-screen
-// 	display: block
-// 	position: fixed
-// 	top: 0
-// 	left: 0
-// 	right: 0
-// 	bottom: 0
-// 	background-color: $darkblue
-// 	z-index: 9000
+	&:hover, a
+		color: white
 
 .z-index
 	position: relative
@@ -69,7 +70,7 @@ h2
 
 h3
 	font-size: 1.875rem
-	line-height: 1
+	line-height: 1.25
 
 p
 	font-size: 1rem
@@ -126,6 +127,9 @@ figure
 
 	+ .section__inner
 		padding-top: 0 !important
+
+.section--about-us
+	margin-top: -2rem
 
 .cookie-banner
 	background-color: pink
@@ -190,6 +194,17 @@ small, .small
 	z-index: 8000
 	padding: 1rem 0
 
+	&:before
+		transition: bottom .25s ease-in-out
+		background-color: rgba($darkblue, .85)
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 100%
+		content: ''
+
 	ul
 		display: block
 		position: relative
@@ -198,14 +213,14 @@ small, .small
 		list-style: none
 
 		li
-			display: inline-block
+			display: inline
 
 			a
 				text-decoration: none !important
 				font-family: $font-stack
 				font-weight: 700
 				float: right
-				margin-left: .65rem
+				margin-left: 1.5rem
 				color: #333
 				display: block
 				background-color: $yellow
@@ -223,6 +238,10 @@ small, .small
 					background-color: #333
 					color: #fff
 
+.nav-holder--scrolled
+	&:before
+		bottom: 0
+
 .scale-in
 	position: relative
 	transition: transform .25s ease-in-out, opacity .25s ease-in-out
@@ -238,12 +257,66 @@ small, .small
 	background-color: $darkblue
 	color: #fff
 
+.row--project-slider
+	margin-top: 3rem
+	
+.section--instagram-feed
+	.row--first,
+	.row--second
+		.col
+			&:nth-child(5),
+			&:nth-child(6),
+			&:nth-child(7)
+				display: none
+
+.instagram-post
+	margin: 1rem 0
+
+	figure
+		background-repeat: no-repeat
+		background-size: cover
+
+	img
+		opacity: 0
+
+	a
+		display: block
+		position: relative
+
+		&:after
+			display: block
+			content: ''
+			padding-bottom: 100%
+
+		img
+			position: absolute
+
+.insta-header
+	color: $darkblue
+	display: block
+	font-size: 1.9rem
+	font-weight: 700
+
+	.social__a
+		position: absolute
+		top: 0
+		right: 1rem
+		padding: 0
+		margin: 0
+		font-size: 4rem
+		color: black
+
 .footer
 	position: relative
 	background-color: black
 	color: #ffffff
+	padding-bottom: 2rem
 
 .footer__contact-info
+
+	p
+		font-size: 1.5rem
+
 	a
 		text-decoration: none
 		color: white
@@ -254,3 +327,6 @@ small, .small
 
 .footer__title
 	font-size: 3rem
+
+.footer_row--first
+	margin-bottom: 2rem
