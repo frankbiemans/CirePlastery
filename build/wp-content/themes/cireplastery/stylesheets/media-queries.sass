@@ -6,6 +6,12 @@
 	body, html
 		font-size: 15px
 
+	h1
+		font-size: 4.875rem
+
+	h2
+		font-size: 3rem
+
 	.master-wrapper__inner
 		margin-top: 10rem
 
@@ -71,6 +77,8 @@
 		margin-bottom: 3rem
 
 	.section--instagram-feed
+		//margin-bottom: 0
+		
 		.row--first,
 		.row--second
 			.col
@@ -106,7 +114,7 @@
 		margin-top: -6rem
 
 		.section__inner
-			padding-top: 0
+			//padding-top: 0
 			padding-bottom: 0
 
 	.footer_row--first
@@ -131,10 +139,14 @@
 				transform: scale(1.05)
 
 @media(min-width:map-get($grid-breakpoints, xl))
+	body
+		overflow: hidden
+		
 	.section--about-us
 		margin-top: -8rem
 
 	.title-addon
+		display: block
 		position: absolute
 		height: auto
 		width: auto
@@ -172,6 +184,9 @@
 
 	.footer_row--first
 		margin-bottom: 5rem
+
+	.section--instagram-feed
+		margin-top: 6rem
 
 	.insta-header
 		position: absolute

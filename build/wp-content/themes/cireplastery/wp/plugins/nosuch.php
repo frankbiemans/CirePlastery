@@ -14,8 +14,8 @@
 		}
 
 		public function create_plugin_settings_page() {
-			$page_title = __('NOSUCH');
-			$menu_title = __('NOSUCH');
+			$page_title = __('TEMPLATE SETTINGS');
+			$menu_title = __('TEMPLATE SETTINGS');
 			$capability = 'manage_options';
 			$slug = 'nsc-plugin';
 			$callback = array( $this, 'nsc_plugin_homescreen' );
@@ -27,7 +27,7 @@
 
 		public function nsc_plugin_homescreen() { ?>
 			<div class="wrap">
-				<h2><?php _e('NOSUCH'); ?></h2>
+				<h2><?php _e('TEMPLATE SETTINGS'); ?></h2>
 				<p>Use the these options in the menu on the left to edit different miscellaneous settings en content on this website.</p>
 				</div> <?php
 			}

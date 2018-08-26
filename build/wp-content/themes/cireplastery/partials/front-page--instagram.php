@@ -10,9 +10,7 @@ $insta_feed = array_slice(return_instagram_feed(), 0, 14);
 				<div class="col-12">
 					Volg ons ook<br />
 					op instagram
-					<a href="<?= get_option('url_instagram'); ?>" target="_blank" class="social__a">
-						<i class="fab fa-instagram social__i" aria-hidden="true"></i>
-					</a>
+					<?php insta_link(); ?>
 				</div>
 			</div>
 		</div>
@@ -23,9 +21,7 @@ $insta_feed = array_slice(return_instagram_feed(), 0, 14);
 						<div class="insta-header insta-header--md d-none d-xl-block">
 							Volg ons ook<br />
 							op instagram
-							<a href="<?= get_option('url_instagram'); ?>" target="_blank" class="social__a">
-								<i class="fab fa-instagram social__i" aria-hidden="true"></i>
-							</a>
+							<?php insta_link(); ?>
 						</div>
 					<?php } ?>
 					<div class="instagram-post widget--transition-to-top widget--transition-to-top--<?= ($i+1); ?>">

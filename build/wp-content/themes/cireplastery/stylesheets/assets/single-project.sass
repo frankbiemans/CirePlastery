@@ -1,0 +1,44 @@
+
+.row--gallery
+	margin-top: 2rem
+	margin-bottom: 2rem
+
+.gallery__image-wrapper
+	margin-bottom: 1rem
+
+.project-navigation
+	margin: 0 auto 2rem auto
+	position: relative
+	padding-top: 1rem
+	max-width: 760px
+
+	.cp-btn
+		white-space: nowrap
+
+.section--top-slider
+	.slick-slide
+		img
+			width: 100%
+			height: auto
+
+@media(min-width:map-get($grid-breakpoints, md))
+	.gallery__image-wrapper
+		margin-bottom: 0
+
+	.row--gallery
+		margin-top: 3rem
+		margin-bottom: 3rem
+
+@media(min-width:map-get($grid-breakpoints, lg))
+	.row--gallery
+		margin-top: 4rem
+		margin-bottom: 4rem
+
+	.project-navigation
+		padding-top: 3rem
+		margin-bottom: 4rem
+
+@media(min-width:map-get($grid-breakpoints, xl))
+	.row--gallery
+		margin-top: 6rem
+		margin-bottom: 6rem

@@ -1,60 +1,62 @@
 $(window).on("load", function() {
     setTimeout(function() {
 
-        var niceScroll = $('body').niceScroll({
-            cursorcolor: "#f1c400",
-            cursoropacitymin: 0,
-            cursoropacitymax: 0,
-            cursorwidth: "8px",
-            cursorborder: "1px solid #3c3c3c",
-            cursorborderradius: "3px",
-            zindex: 9950,
-            scrollspeed: 60,
-            mousescrollstep: 40,
-            touchbehavior: false,
-            emulatetouch: false,
-            hwacceleration: true,
-            boxzoom: false,
-            dblclickzoom: true,
-            gesturezoom: true,
-            grabcursorenabled: false,
-            autohidemode: true,
-            background: "",
-            iframeautoresize: true,
-            cursorminheight: 32,
-            preservenativescrolling: true,
-            railoffset: false,
-            bouncescroll: false,
-            spacebarenabled: true,
-            railpadding: {
-                top: 0,
-                right: 0,
-                left: 0,
-                bottom: 0
-            },
-            disableoutline: true,
-            horizrailenabled: true,
-            enabletranslate3d: true,
-            enablemousewheel: true,
-            enablekeyboard: true,
-            smoothscroll: true,
-            sensitiverail: true,
-            enablemouselockapi: true,
-            cursorfixedheight: false,
-            hidecursordelay: 400,
-            directionlockdeadzone: 6,
-            nativeparentscrolling: true,
-            enablescrollonselection: true,
-            cursordragspeed: 0.3,
-            rtlmode: "auto",
-            cursordragontouch: false,
-            oneaxismousemode: "auto",
-            scriptpath: "",
-            preventmultitouchscrolling: true,
-            disablemutationobserver: false,
-            enableobserver: true,
-            scrollbarid: false
-        });
+        if ($(window).width() >= 1200) {
+            var niceScroll = $('body').niceScroll({
+                cursorcolor: "#f1c400",
+                cursoropacitymin: 0,
+                cursoropacitymax: 0,
+                cursorwidth: "8px",
+                cursorborder: "1px solid #3c3c3c",
+                cursorborderradius: "3px",
+                zindex: 9950,
+                scrollspeed: 60,
+                mousescrollstep: 40,
+                touchbehavior: true,
+                emulatetouch: false,
+                hwacceleration: true,
+                boxzoom: false,
+                dblclickzoom: true,
+                gesturezoom: true,
+                grabcursorenabled: false,
+                autohidemode: true,
+                background: "",
+                iframeautoresize: true,
+                cursorminheight: 32,
+                preservenativescrolling: true,
+                railoffset: false,
+                bouncescroll: false,
+                spacebarenabled: true,
+                railpadding: {
+                    top: 0,
+                    right: 0,
+                    left: 0,
+                    bottom: 0
+                },
+                disableoutline: true,
+                horizrailenabled: true,
+                enabletranslate3d: true,
+                enablemousewheel: true,
+                enablekeyboard: true,
+                smoothscroll: true,
+                sensitiverail: true,
+                enablemouselockapi: true,
+                cursorfixedheight: false,
+                hidecursordelay: 400,
+                directionlockdeadzone: 6,
+                nativeparentscrolling: true,
+                enablescrollonselection: true,
+                cursordragspeed: 0.3,
+                rtlmode: "auto",
+                cursordragontouch: false,
+                oneaxismousemode: "auto",
+                scriptpath: "",
+                preventmultitouchscrolling: false,
+                disablemutationobserver: false,
+                enableobserver: true,
+                scrollbarid: false
+            });
+        }
 
         $('body, #master-wrapper').removeAttr('style');
 
@@ -64,7 +66,7 @@ $(window).on("load", function() {
             $('.text-transition').waypoint({
                 handler: function(direction) {
                     var __this = $(this.element);
-                    __this.toggleClass('text-transition--transitioned');
+                    __this.addClass('text-transition--transitioned');
                 },
                 offset: '90%'
             });
@@ -72,7 +74,7 @@ $(window).on("load", function() {
             $('.wp-fade-only-in').waypoint({
                 handler: function(direction) {
                     var __this = $(this.element);
-                    __this.toggleClass('wp-fade-only-in--faded-in');
+                    __this.addClass('wp-fade-only-in--faded-in');
                 },
                 offset: '95%'
             });
@@ -80,7 +82,7 @@ $(window).on("load", function() {
             $('.widget--transition-to-top').waypoint({
                 handler: function(direction) {
                     var __this = $(this.element);
-                    __this.toggleClass('widget--transition-to-top--transitioned');
+                    __this.addClass('widget--transition-to-top--transitioned');
                 },
                 offset: '90%'
             });
@@ -88,7 +90,7 @@ $(window).on("load", function() {
             $('.scale-in').waypoint({
                 handler: function(direction) {
                     var __this = $(this.element);
-                    __this.toggleClass('scale-in--scaled');
+                    __this.addClass('scale-in--scaled');
                 },
                 offset: '90%'
             });
@@ -96,7 +98,7 @@ $(window).on("load", function() {
             $('.slider-widget').waypoint({
                 handler: function(direction) {
                     var __this = $(this.element);
-                    __this.toggleClass('slider-widget--transitioned');
+                    __this.addClass('slider-widget--transitioned');
                 },
                 offset: '95%'
             });
@@ -107,16 +109,31 @@ $(window).on("load", function() {
 });
 
 (function($) {
-    $('.nav-holder').onePageNav({
+    var onePageNav = $('.home .nav-holder').onePageNav({
         currentClass: 'current',
         easing: 'swing',
+        changeHash: true,
         begin: function() {},
         end: function() {},
         scrollChange: function($currentListItem) {}
     });
 
+    $('.home [href="#projecten"]').on('click', function(e) {
+        e.preventDefault();
+        $('.menu').find('a[href="/#projecten"]').trigger('click');
+    });
+
+    $('.hamburger').on('click', function() {
+        $(this).toggleClass('is-active');
+        $('.nav-holder').toggleClass('nav-holder--active');
+    });
+
+    $('.menu a').on('click', function() {
+        $('.hamburger').removeClass('is-active');
+        $('.nav-holder').removeClass('nav-holder--active');
+    });
+
     $('.fake-submit').on('click', function() {
-        console.log('Hola');
         $(this).closest('.form__submit-wrapper').find('[type=submit]').trigger('click');
     });
 
@@ -150,7 +167,7 @@ $(window).on("load", function() {
         dots: false,
         arrows: false,
         autoplay: true,
-        draggable: true,
+        draggable: false,
         autoplaySpeed: 4000
     });
 
@@ -160,6 +177,13 @@ $(window).on("load", function() {
     });
     projectslider.on('setPosition', function(event, slick) {
         setSliderTitlePos();
+
+        var widgets = projectslider.find('.fontpage-widget--project');
+        widgets.css({
+            height: 'auto'
+        }).css({
+            height: Math.round(projectslider.find('.slick-track').outerHeight())
+        });
     });
     projectslider.slick({
         infinite: false,
@@ -169,6 +193,9 @@ $(window).on("load", function() {
         mobileFirst: true,
         slidesToShow: 1,
         responsive: [{
+            breakpoint: 1,
+            settings: "unslick"
+        }, {
             breakpoint: 767,
             settings: {
                 slidesToShow: 2

@@ -24,37 +24,75 @@
 		left: 0
 		content: ''
 
-	&:after
-		transition: right .25s ease-in-out
-		display: block
-		position: absolute
-		bottom: 2px
-		left: 2.25rem
-		height: 2px
-		background-color: #000
-		right: 100%
-		content: ''
+.cpt-btn--arrow-left
+	&:before
+		transform: rotate(180deg)
 
-	&:hover
-		text-decoration: none
+.cpt-btn--arrow-on-right-side
+	padding-left: 0
+	padding-right: 2.25rem
 
-		&:after
-			right: 0
+	&:before
+		left: auto
+		right: 0
 
 .cp-btn-2
 	@include yellow-button(none)
 
-	&:hover
-		background-color: black
-		color: $yellow
-
-		&:after
-			color: $yellow
+.cp-btn--white
+	color: white
 
 .header p:last-of-type a:last-of-type
 	@extend .cp-btn
 	margin-top: 2rem
 
-
 .widget p:last-of-type a:last-of-type
 	@extend .cp-btn
+
+@media(min-width:map-get($grid-breakpoints, xl))
+
+	.cp-btn
+		&:after
+			transition: right .25s ease-in-out
+			display: block
+			position: absolute
+			bottom: 2px
+			left: 2.25rem
+			height: 2px
+			background-color: #000
+			right: 100%
+			content: ''
+		&:hover
+			text-decoration: none
+			color: #000
+
+			&:after
+				right: 0
+
+	.cp-btn-2
+		&:hover
+			background-color: black
+			color: $yellow
+
+			&:after
+				color: $yellow
+
+		&:after
+			transition: all .25s ease-in-out
+
+	.cp-btn--white
+		color: white
+
+		&:hover
+			color: white
+			
+	.cpt-btn--arrow-on-right-side
+		&:hover
+			&:after
+				right: 2.25rem
+				left: 0%
+
+		&:after
+			transition: left .25s ease-in-out
+			right: 2.25rem
+			left: 100%

@@ -1,21 +1,21 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Open+Sans:300,400,700,800");
+@import 'https://fonts.googleapis.com/css?family=Poppins:300,400,600,700';
 #adminmenu .toplevel_page_nsc-plugin .wp-first-item {
   font-weight: bold; }
 
 #adminmenu .toplevel_page_nsc-plugin div.wp-menu-image:before {
-  background-image: url(images/favicon.png);
+  background-image: url(images/icons/favicon-32x32.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   content: ''; }
 
 [class*="nsc"] {
-  background: black;
+  background: #293939;
   color: white; }
   [class*="nsc"] h1, [class*="nsc"] h2, [class*="nsc"] h3, [class*="nsc"] h4, [class*="nsc"] h5, [class*="nsc"] h5, [class*="nsc"] li, [class*="nsc"] p, [class*="nsc"] label, [class*="nsc"] th {
     color: white; }
   [class*="nsc"] a {
-    color: #f1c400; }
+    color: #ffff00; }
   [class*="nsc"] p.description {
     opacity: .75; }
   [class*="nsc"] textarea, [class*="nsc"] [type=text], [class*="nsc"] select {
@@ -26,7 +26,7 @@
   [class*="nsc"] .wrap > h2:first-of-type {
     font-weight: 700;
     text-transform: uppercase;
-    color: #f1c400; }
+    color: #ffff00; }
   [class*="nsc"] form h2:first-of-type {
     border-top: 1px solid rgba(255, 255, 255, 0.25);
     padding-top: 1rem; }
@@ -41,15 +41,31 @@ html {
   font-size: 16px; }
 
 #tinymce {
-  font-family: 'Open Sans', sans-serif; }
+  font-family: "Poppins", sans-serif; }
   #tinymce html {
     font-size: 160px; }
   #tinymce p, #tinymce td {
     font-size: 1rem; }
+  #tinymce body, #tinymce html {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px; }
   #tinymce h1, #tinymce h2, #tinymce h3, #tinymce h4, #tinymce h5, #tinymce h6 {
-    font-family: 'Roboto Slab', serif;
-    margin: .5rem 0 1.5rem 0;
-    font-weight: normal; }
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: #293939; }
+  #tinymce h1 {
+    font-size: 4.875rem;
+    line-height: 1; }
+  #tinymce h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.25rem; }
+  #tinymce h3 {
+    font-size: 1.875rem;
+    line-height: 1.25; }
+  #tinymce p {
+    font-size: 1rem;
+    line-height: 1.5; }
   #tinymce h1 {
     font-size: 2.5rem;
     line-height: 3rem; }

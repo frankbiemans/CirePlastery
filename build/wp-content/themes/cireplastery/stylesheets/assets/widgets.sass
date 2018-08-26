@@ -39,6 +39,22 @@
 	img
 		max-width: 100%
 
+.fontpage-widget--call-to-action
+	background-color: $yellow
+	margin-bottom: 0
+	margin-top: 2rem
+
+	.fontpage-widget__inner
+		text-align: center
+		padding: 3rem 1rem
+
+		h3,	p, p a
+			color: $darkblue
+
+		p
+			font-size: 1.35rem
+			margin-top: 1.5rem
+
 @media(min-width:map-get($grid-breakpoints, md))
 	.slider-widget__inner
 		padding: 2rem 2rem
@@ -62,12 +78,24 @@
 			max-width: 100%
 			margin: 0 0 1.25rem 0 !important
 
+	.fontpage-widget--call-to-action
+		background-color: $yellow
+		margin: 0 0 2rem 0
+
+		.fontpage-widget__inner
+			display: block
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			left: 2rem
+			right: 2rem
+
 @media(min-width:map-get($grid-breakpoints, lg))
 	.fontpage-widget
 		margin-bottom: 0rem
 
 	.slider-widget__inner
-		padding: 2rem 0rem 2rem 0rem
+		padding: 2rem 2rem 2rem 0rem
 
 @media(min-width:map-get($grid-breakpoints, xl))
 	.widget--transition-to-top
@@ -75,6 +103,9 @@
 		transition: top .25s ease-in-out, opacity .25s ease-in-out
 		top: 5rem
 		opacity: 0
+
+	.slider-widget--transitioned
+		margin-top: -16rem
 
 	@for $i from 1 through 30
 		.widget--transition-to-top--#{$i}

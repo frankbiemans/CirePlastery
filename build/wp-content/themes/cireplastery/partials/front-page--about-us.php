@@ -18,7 +18,8 @@
 				</div>
 				<div class="col-12 col-md-6 col-xl-4">
 					<figure class="mt-3 mb-md-0">
-						<img src="<?php bloginfo( 'template_url' ) ?>/images/furnibo-keukentablet-001.jpg" class="img-fluid w-100 scale-in" width="1024" height="768" alt="" />
+						<!--<img src="<?php bloginfo( 'template_url' ) ?>/images/furnibo-keukentablet-001.jpg" class="img-fluid w-100 scale-in" width="1024" height="768" alt="" />-->
+						<?= wp_get_attachment_image( 75, 'full'); ?>
 					</figure>
 				</div>
 			</div>

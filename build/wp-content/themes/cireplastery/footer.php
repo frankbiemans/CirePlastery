@@ -10,7 +10,7 @@
 						</div>
 						<div class="col-12 col-md">
 							<div class="float-right">
-								<?= do_shortcode('[social-icons]'); ?>
+								<?php insta_link(); ?>
 							</div>
 						</div>
 					</div>

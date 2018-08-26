@@ -1,0 +1,144 @@
+.hamburger-menu
+	display: block
+	position: fixed
+	top: 0
+	right: 0
+
+	.hamburger
+		transition-property: all
+		padding: 18px 15px 12px 15px
+		background-color: $darkblue
+		outline: 0
+
+		&:hover
+			opacity: 1
+			outline: 0
+
+		.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+			background-color: #fff
+			opacity: 1
+
+		&.is-active
+			background-color: darken($darkblue, 7.5%)
+
+
+.nav-holder
+	transition: left .35s cubic-bezier(1, 0, 0, 1)
+	display: block
+	position: fixed
+	top: 0
+	left: 100%
+	width: 100vw
+	bottom: 0
+	background-color: $darkblue
+	z-index: 8000
+
+	.menu
+		display: block
+		position: relative
+		margin: 0
+		padding: 0
+		list-style: none
+
+		li
+			a
+				text-decoration: none !important
+				font-family: $font-stack
+				font-weight: 700
+				color: #333
+				display: block
+				max-width: 75%
+				margin: 1.5rem auto
+				font-size: 1.25rem
+				background-color: $yellow
+				border-radius: 2rem
+				text-transform: uppercase
+				padding: .75rem 1.5rem
+				text-align: center
+
+
+.nav-holder--active
+	left: 0%
+
+.logo
+	max-width: 45%
+	margin: 0 auto 1.5rem auto
+
+.project-navigation__logo
+	max-width: none
+	margin: 0
+
+.container-fluid--nav
+	position: absolute
+	width: 100%
+	top: 50%
+	transform: translateY(-50%)
+		
+@media(min-width:map-get($grid-breakpoints, md))
+	.logo
+		max-width: none
+		margin: 0
+
+	.container-fluid--nav
+		position: relative
+		width: auto
+		top: 0
+		transform: none
+
+	.nav-holder
+		top: 0
+		left: 0
+		right: 0
+		bottom: auto
+		padding: 1rem 0
+		background: transparent
+		text-align: right
+
+		&:before
+			transition: bottom .25s ease-in-out
+			background-color: rgba($darkblue, .85)
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 100%
+			content: ''
+
+		.menu
+			width: 100%
+
+			li
+				display: inline
+
+				a
+					display: inline-block
+					margin: 0 1rem 0 0
+					font-size: 1rem
+					font-weight: 700
+					border-radius: 1rem
+					padding: .3rem .7rem
+					transition: color .15s ease-in-out, background-color .15s ease-in-out
+
+					&:hover
+						background-color: #333
+						color: #fff
+					
+				// &[class*="current"]
+				// 	a
+				// 		background-color: white
+				// 		color: $darkblue
+
+	.nav-holder--scrolled
+		&:before
+			bottom: 0
+		
+@media(min-width:map-get($grid-breakpoints, xl))
+	.nav-holder
+		text-align: left
+
+	.nav-holder
+		.menu
+			margin-left: -.7rem
+			margin-right: -3rem
+			width: auto

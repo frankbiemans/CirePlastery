@@ -38,6 +38,14 @@
 							</div>
 						</div>
 					<?php } ?>
+					<div class="fontpage-widget fontpage-widget--project fontpage-widget--call-to-action">
+						<div class="fontpage-widget__inner">
+							<div class="frontpage-widget__text">
+								<h3 class="yellow"><?= get_option('c2a_text_heading'); ?></h3>
+								<?= wpautop(get_option('c2a_text_text')); ?>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

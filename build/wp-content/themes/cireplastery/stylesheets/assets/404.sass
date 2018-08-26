@@ -1,0 +1,32 @@
+.error404
+	.master-wrapper__inner
+		margin-top: 0
+
+	.content-404-wrapper
+		position: relative
+		min-height: 100vh
+		background-color: $darkblue
+
+	.content-404-wrapper__inner
+		position: absolute
+		left: 0
+		right: 0
+		top: 50%
+		transform: translateY(-50%)
+		text-align: center
+
+	h1
+		font-size: 3rem
+		color: white
+
+	.cp-btn--white
+		margin-top: 4rem
+		transform: scale(1.4)
+
+	.header
+		display: none
+
+@media(min-width:map-get($grid-breakpoints, ms))
+	.error404
+		h1
+			font-size: 4.875rem

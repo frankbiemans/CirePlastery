@@ -14,13 +14,56 @@
 .social__a
 	display: inline-block
 	margin-left: 1rem
-	opacity: .75
+	opacity: 1
 	color: $yellow
 
 	&:hover
 		color: #ffffff
 		opacity: 1
 
+.insta-icon
+	width: 4rem
+	height: 4rem
+	top: 1rem
+	display: block
+	position: relative
+	opacity: 1
+
+	img
+		position: absolute
+		top: 0
+		left: 0
+		transition: all .25s ease-in-out
+		width: 4rem
+		height: 4rem
+
+	.black
+		opacity: 1
+
+	.colored
+		opacity: 0
+
+	.white
+		display: none
+		opacity: 1
+
+	&:hover
+		.black
+			opacity: 0
+
+		.colored
+			opacity: 1
+
+		.white
+			opacity: 0
+
+.footer
+	.insta-icon
+		.black
+			display: none
+
+		.white
+			display: block
 
 @media(min-width:map-get($grid-breakpoints, lg))
 	.social__ul

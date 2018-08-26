@@ -10,10 +10,13 @@
 @import 'assets/sliders'
 @import 'assets/keyframes'
 @import 'assets/widgets'
+@import 'assets/nav'
 @import 'assets/extra-cols'
+@import 'assets/hamburgers'
+@import 'assets/single-project'
+@import 'assets/404'
 
 body
-	overflow: hidden
 	user-select: none
 
 #master-wrapper
@@ -22,8 +25,8 @@ body
 .master-wrapper__inner
 	display: block
 	position: relative
-	margin-top: 6rem
-	cursor: grab
+	margin-top: 4.5rem
+	//cursor: grab
 
 .container-fluid
 	max-width: 1960px
@@ -60,11 +63,11 @@ h1, h2, h3, h4, h5, h6
 	color: $darkblue
 
 h1
-	font-size: 4.875rem
+	font-size: 3.9rem
 	line-height: 1
 
 h2
-	font-size: 3rem
+	font-size: 2.5rem
 	line-height: 1.2
 	margin-bottom: 1.25rem
 
@@ -108,7 +111,7 @@ figure
 
 .title-addon
 	color: $darkblue
-	display: block
+	display: none
 	position: relative
 	text-transform: uppercase
 	font-family: $font-stack
@@ -186,62 +189,6 @@ small, .small
 	font-size: 0.75rem
 	line-height: 1.5
 
-.nav-holder
-	top: 0
-	left: 0
-	right: 0
-	position: fixed
-	z-index: 8000
-	padding: 1rem 0
-
-	&:before
-		transition: bottom .25s ease-in-out
-		background-color: rgba($darkblue, .85)
-		display: block
-		position: absolute
-		top: 0
-		left: 0
-		right: 0
-		bottom: 100%
-		content: ''
-
-	ul
-		display: block
-		position: relative
-		margin: 0
-		padding: 0
-		list-style: none
-
-		li
-			display: inline
-
-			a
-				text-decoration: none !important
-				font-family: $font-stack
-				font-weight: 700
-				float: right
-				margin-left: 1.5rem
-				color: #333
-				display: block
-				background-color: $yellow
-				border-radius: 1rem
-				text-transform: uppercase
-				padding: .3rem .7rem
-				transition: color .15s ease-in-out, background-color .15s ease-in-out
-
-				&:hover
-					background-color: #333
-					color: #fff
-
-			&[class*="current"]
-				a
-					background-color: #333
-					color: #fff
-
-.nav-holder--scrolled
-	&:before
-		bottom: 0
-
 .scale-in
 	position: relative
 	transition: transform .25s ease-in-out, opacity .25s ease-in-out
@@ -261,6 +208,8 @@ small, .small
 	margin-top: 3rem
 	
 .section--instagram-feed
+	margin-bottom: 2rem
+	
 	.row--first,
 	.row--second
 		.col
@@ -298,6 +247,7 @@ small, .small
 	font-weight: 700
 
 	.social__a
+		transition: color .25s ease-in-out
 		position: absolute
 		top: 0
 		right: 1rem
@@ -305,6 +255,10 @@ small, .small
 		margin: 0
 		font-size: 4rem
 		color: black
+		opacity: 1
+
+		&:hover
+			color: $yellow
 
 .footer
 	position: relative
@@ -313,7 +267,6 @@ small, .small
 	padding-bottom: 2rem
 
 .footer__contact-info
-
 	p
 		font-size: 1.5rem
 

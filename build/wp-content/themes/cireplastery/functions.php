@@ -93,23 +93,21 @@ function break_off_the_title( $title, $id = null ) {
 }
 
 function put_title_in_spans($title_multiple_lines){
-        $new_title = '';
-        $temp = '<span class="outer"><span class="inner">%s</span></span>';
-        $words = explode(PHP_EOL, $title_multiple_lines);
-        foreach($words as $word){
-            $new_title .= sprintf($temp, $word);
-        }
-        $title = $new_title;
-        return $title;
+    $new_title = '';
+    $temp = '<span class="outer"><span class="inner">%s</span></span>';
+    $words = explode(PHP_EOL, $title_multiple_lines);
+    foreach($words as $word){
+        $new_title .= sprintf($temp, $word);
+    }
+    $title = $new_title;
+    return $title;
 }
 add_filter( 'the_title', 'break_off_the_title', 10, 2 );
 
 
 
 function return_instagram_feed($hastag = false){
-    $access_token = '20246152.3a81a9f.0bf6bbb25e0544dba0ed7945127e1fe2';
-    //$access_token = '183182063.bfff618.694a64013cb94965b2ef76ffa1a54484';
-    //$user = '183182063'; // rik vera
+    $access_token = '7998922224.7b6e4d0.8bac09cba6214ff79859d6b1d48063b2';
     $user = 'self';
     $feed_url = 'https://api.instagram.com/v1/users/'. $user .'/media/recent/?access_token='. $access_token;
     $json = file_get_contents($feed_url);
@@ -148,4 +146,26 @@ function return_instagram_feed($hastag = false){
     }
 
     return $return_arr;
+}
+
+function forward_subscribers(){
+    global $current_user;
+    get_currentuserinfo();
+    if(is_admin() && is_user_logged_in() && $current_user->data->user_email == 'info@cireplastery.nl'){
+        wp_redirect( site_url() );
+    }
+}
+
+add_action( 'admin_init', 'forward_subscribers');
+
+function insta_link(){
+    echo '
+        <a href="'. get_option('url_instagram') .'" target="_blank" class="social__a">
+            <span class="insta-icon">
+                <img src="'. get_bloginfo( 'template_url' ) .'/images/icons/instagram-black.png" class="black" />
+                <img src="'. get_bloginfo( 'template_url' ) .'/images/icons/instagram.png" class="colored" />
+                <img src="'. get_bloginfo( 'template_url' ) .'/images/icons/instagram-white.png" class="white" />
+            </span>
+        </a>
+    ';
 }

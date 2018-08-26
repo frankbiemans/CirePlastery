@@ -26,7 +26,7 @@
 
     <?php if(!is_plugin_active('wordpress-seo/wp-seo.php')){ ?><meta name='description' content='<?php bloginfo('description'); ?>'><?php }
     wp_head();
-    include_once('analyticstracking.php');
+    get_template_part('partials/analyticstracking');
     ?>
     <style>
         .loading-screen {
@@ -42,28 +42,30 @@
     </style>
 </head>
 <body <?php body_class(); ?> style="background-color: #293939;">
-    <?php //include('cookie-banner.php'); ?>
+    <?php //get_template_part('partials/cookie-banner'); ?>
     <div id="master-wrapper" style="opacity: 0;">
 
         <div class="master-wrapper__inner">
-        <nav class="nav-holder d-none d-md-block">
-            <?php include('nav-menu.php'); ?>
+        <nav class="nav-holder nav-holder--desktop d-md-block">
+            <?php get_template_part('partials/nav-menu'); ?>
         </nav>
 
-        <?php if(is_front_page()){ ?>
-            <header class="header">
-                <div class="header__inner">
-                    <div class="container">
-                        <div class="row align-items-end">
-                            <div class="col-12 col-md-6 col-lg-6 col-xl-5 offset-lg-2">
+        <header class="header">
+            <div class="header__inner">
+                <div class="container">
+                    <div class="row align-items-end">
+                        <div class="col-12 col-md offset-lg-2">
+                            <?php if(is_front_page()){ ?>
                                 <div class="title-addon title-addon--01 wp-fade-only-in"><span>Home</span></div>
-                                <h1 class="text-transition"><?php the_title(); ?></h1>
-                            </div>
+                            <?php } ?>
+                            <h1 class="text-transition"><?php the_title(); ?></h1>
+                        </div>
+                        <?php if(is_front_page()){ ?>
                             <div class="col col-xl-4 offset-xl-1">
                                 <?= wpautop(apply_filters('the_content', get_post_field('post_content', 2))); ?>
                             </div>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
-            </header>
-        <?php } ?>
+            </div>
+        </header>
