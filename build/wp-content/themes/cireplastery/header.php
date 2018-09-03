@@ -29,43 +29,41 @@
     get_template_part('partials/analyticstracking');
     ?>
     <style>
-        .loading-screen {
-            display: block;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #293939;
-            z-index: 9000;
-        }
-    </style>
+    .loading-screen {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #293939;
+        z-index: 9000;
+    }
+</style>
 </head>
 <body <?php body_class(); ?> style="background-color: #293939;">
     <?php //get_template_part('partials/cookie-banner'); ?>
     <div id="master-wrapper" style="opacity: 0;">
 
         <div class="master-wrapper__inner">
-        <nav class="nav-holder nav-holder--desktop d-md-block">
             <?php get_template_part('partials/nav-menu'); ?>
-        </nav>
 
-        <header class="header">
-            <div class="header__inner">
-                <div class="container">
-                    <div class="row align-items-end">
-                        <div class="col-12 col-md offset-lg-2">
-                            <?php if(is_front_page()){ ?>
-                                <div class="title-addon title-addon--01 wp-fade-only-in"><span>Home</span></div>
-                            <?php } ?>
-                            <h1 class="text-transition"><?php the_title(); ?></h1>
-                        </div>
-                        <?php if(is_front_page()){ ?>
-                            <div class="col col-xl-4 offset-xl-1">
-                                <?= wpautop(apply_filters('the_content', get_post_field('post_content', 2))); ?>
+            <header class="header">
+                <div class="header__inner">
+                    <div class="container">
+                        <div class="row align-items-end">
+                            <div class="col-12 col-md offset-lg-2">
+                                <?php if(is_front_page()){ ?>
+                                    <div class="title-addon title-addon--01 wp-fade-only-in"><span>Home</span></div>
+                                <?php } ?>
+                                <h1 class="text-transition"><?php the_title(); ?></h1>
                             </div>
-                        <?php } ?>
+                            <?php if(is_front_page()){ ?>
+                                <div class="col col-xl-4 offset-xl-1">
+                                    <?= wpautop(apply_filters('the_content', get_post_field('post_content', 2))); ?>
+                                </div>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </header>
+            </header>
