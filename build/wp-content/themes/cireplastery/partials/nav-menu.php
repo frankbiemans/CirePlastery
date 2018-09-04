@@ -33,7 +33,7 @@
     </div>
 </nav>
 
-<div class="logo-mobile-wrapper d-block d-lg-none">
+<div class="logo-mobile-wrapper d-block d-md-none">
     <figure class="">
         <a href="<?php echo site_url(); ?>">
             <img src="<?php bloginfo( 'template_url' ) ?>/images/cireplaster-logo.svg" width="2840" height="2840" alt="<?php bloginfo( 'name' ); ?>" />
